@@ -1,0 +1,129 @@
+.whyUs {
+  position: relative;
+  background: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.bgOrb {
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.04) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto var(--space-4xl);
+}
+
+.header .section-subtitle {
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+/* Card */
+.card {
+  position: relative;
+  padding: var(--space-2xl);
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-gold);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.cardNumber {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-accent-text);
+  line-height: 1;
+}
+
+.card:hover .cardNumber {
+  color: rgba(212, 168, 83, 0.2);
+}
+
+.cardIconWrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-bg);
+  border-radius: var(--radius-md);
+  color: var(--color-gold);
+  transition: all var(--transition-base);
+}
+
+.card:hover .cardIconWrap {
+  background: var(--color-accent-bg-hover);
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.cardLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.card:hover .cardLine {
+  transform: scaleX(1);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

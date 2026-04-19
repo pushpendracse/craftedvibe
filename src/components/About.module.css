@@ -1,0 +1,158 @@
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.bgAccent {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+/* Image Column */
+.imageCol {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.imageAccent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+}
+
+.experienceBadge {
+  position: absolute;
+  bottom: 30px;
+  right: -30px;
+  background: var(--gradient-gold);
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-gold-lg);
+  animation: float 6s ease-in-out infinite;
+}
+
+.expNumber {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-bg-primary);
+  line-height: 1;
+}
+
+.expText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-bg-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+/* Text Column */
+.textCol {
+  padding-left: var(--space-xl);
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: var(--space-lg);
+}
+
+/* Mission & Vision */
+.missionVision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.mvCard {
+  padding: var(--space-xl);
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.mvCard:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+.mvIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-bg);
+  border-radius: var(--radius-md);
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+
+.mvTitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.mvText {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .textCol {
+    padding-left: 0;
+  }
+
+  .experienceBadge {
+    right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .missionVision {
+    grid-template-columns: 1fr;
+  }
+}

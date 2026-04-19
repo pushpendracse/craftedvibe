@@ -1,0 +1,139 @@
+.projects {
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-4xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+/* Card */
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.cardImage {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.card:nth-child(1) .cardImage {
+  padding-top: 85%;
+}
+
+.cardImage img {
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.08);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 10, 15, 0.95) 0%,
+    rgba(10, 10, 15, 0.3) 40%,
+    rgba(10, 10, 15, 0.1) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--space-xl);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardCategory {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.cardSize {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.cardBtn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-gold);
+  border-radius: 50%;
+  color: var(--color-bg-primary);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.cardBtn:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-gold-lg);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .cardOverlay {
+    opacity: 1;
+  }
+}
