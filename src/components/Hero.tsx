@@ -26,7 +26,7 @@ export default function Hero() {
     <section className={styles.hero} id="home" ref={heroRef}>
       <div className={styles.heroBg}>
         <Image
-          src="/images/hero.png"
+          src="/images/hero1.jpg"
           alt="CraftedVibe Studio - Premium Exhibition Stand"
           fill
           priority

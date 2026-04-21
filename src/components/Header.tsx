@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Header.module.css";
 import ThemeToggle from "./ThemeToggle";
 
@@ -37,11 +38,14 @@ export default function Header() {
     >
       <div className={`container ${styles.headerInner}`}>
         <Link href="/" className={styles.logo} aria-label="CraftedVibe Studio Home">
-          <span className={styles.logoIcon}>CV</span>
-          <div className={styles.logoText}>
-            <span className={styles.logoName}>CraftedVibe</span>
-            <span className={styles.logoTagline}>STUDIO</span>
-          </div>
+          <Image
+            src="/images/cvs logo.png"
+            alt="CraftedVibe Studio Logo"
+            width={120}
+            height={44}
+            className={styles.logoImage}
+            priority
+          />
         </Link>
 
         <nav
