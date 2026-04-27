@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 
 const footerLinks = {
@@ -27,11 +28,13 @@ export default function Footer() {
             {/* Brand Column */}
             <div className={styles.brandCol}>
               <Link href="/" className={styles.logo}>
-                <span className={styles.logoIcon}>CV</span>
-                <div className={styles.logoText}>
-                  <span className={styles.logoName}>CraftedVibe</span>
-                  <span className={styles.logoTagline}>STUDIO</span>
-                </div>
+                <Image
+                  src="/images/cvs logo.png"
+                  alt="CraftedVibe Studio Logo"
+                  width={140}
+                  height={50}
+                  className={styles.logoImage}
+                />
               </Link>
               <p className={styles.brandDesc}>
                 A standout company with a truly talented team. Trusted stand

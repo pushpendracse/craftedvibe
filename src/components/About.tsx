@@ -33,7 +33,7 @@ export default function About() {
         >
           <div className={styles.imageWrapper}>
             <Image
-              src="/images/team.png"
+              src="/images/team1.png"
               alt="CraftedVibe Studio team at work"
               width={580}
               height={700}

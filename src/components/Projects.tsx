@@ -6,37 +6,37 @@ import styles from "./Projects.module.css";
 
 const projects = [
   {
-    image: "/images/project1.png",
+    image: "/images/Project1.png",
     title: "Automotive Excellence Pavilion",
     category: "Exhibition Stand",
     size: "450 sqm",
   },
   {
-    image: "/images/project2.png",
+    image: "/images/Project2.png",
     title: "Luxury Brand Showcase",
     category: "Brand Activation",
     size: "320 sqm",
   },
   {
-    image: "/images/project3.png",
+    image: "/images/Project3.png",
     title: "Tech Innovation Hub",
     category: "Exhibition Stand",
     size: "600 sqm",
   },
   {
-    image: "/images/interior.png",
+    image: "/images/Project4.png",
     title: "Corporate Headquarters",
     category: "Interior Design",
     size: "1200 sqm",
   },
   {
-    image: "/images/project4.png",
+    image: "/images/Project1.png",
     title: "International Trade Expo",
     category: "Exhibition Stand",
     size: "800 sqm",
-  },
+    },
   {
-    image: "/images/hero.png",
+    image: "/images/Project1.png",
     title: "Premium Lounge Experience",
     category: "Brand Activation",
     size: "280 sqm",
