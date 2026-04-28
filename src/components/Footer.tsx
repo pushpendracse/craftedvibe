@@ -34,6 +34,8 @@ export default function Footer() {
                   width={140}
                   height={50}
                   className={styles.logoImage}
+                  loading="lazy"
+                  quality={75}
                 />
               </Link>
               <p className={styles.brandDesc}>

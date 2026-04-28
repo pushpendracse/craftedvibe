@@ -93,7 +93,8 @@ export default function Projects() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}
-                  quality={80}
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className={styles.cardOverlay}>
                   <div className={styles.cardInfo}>

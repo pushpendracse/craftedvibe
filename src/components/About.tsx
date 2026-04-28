@@ -37,7 +37,8 @@ export default function About() {
               alt="CraftedVibe Studio team at work"
               width={580}
               height={700}
-              quality={85}
+              quality={75}
+              loading="lazy"
               style={{ objectFit: "cover", borderRadius: "20px" }}
             />
             <div className={styles.imageAccent}></div>

@@ -62,6 +62,11 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for performance */}
+        <link rel="dns-prefetch" href="/images" />
       </head>
       <body>
         <Header />

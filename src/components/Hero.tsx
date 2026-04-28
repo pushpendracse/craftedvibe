@@ -6,23 +6,36 @@ import styles from "./Hero.module.css";
 
 const heroImages = [
   { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
-  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
-  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
-  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
-  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
-  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" }
-
+  { src: "/images/hero1.png", alt: "Creative Design Solutions" },
+  { src: "/images/Project1.png", alt: "Professional Exhibition Setup" },
+  { src: "/images/Project2.png", alt: "Innovative Stand Design" },
+  { src: "/images/Project3.png", alt: "Premium Interior Solutions" },
 ];
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
+    // Preload all images in background
+    const preloadImages = () => {
+      heroImages.forEach((image, index) => {
+        if (index === 0) return; // First image already loading
+        const img = new window.Image();
+        img.src = image.src;
+      });
+    };
+    
+    // Start preloading after component mounts
+    const timer = setTimeout(preloadImages, 100);
+    
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -36,6 +49,7 @@ export default function Hero() {
             fill
             priority={index === 0}
             unoptimized
+            loading={index === 0 ? "eager" : "lazy"}
             className={`${styles.heroImage} ${index === currentImage ? styles.active : ""}`}
           />
         ))}
