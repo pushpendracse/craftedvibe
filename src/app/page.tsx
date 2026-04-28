@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import WhyUs from "@/components/WhyUs";
 import Contact from "@/components/Contact";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <WhyUs />
       <Contact />
+      <FloatingWhatsApp />
     </>
   );
 }

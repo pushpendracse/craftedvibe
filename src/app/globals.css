@@ -43,9 +43,9 @@
     --color-bg-card: #ffffff;
     --color-bg-glass: rgba(255, 255, 255, 0.75);
 
-    --color-text-primary: #1a1a24;
-    --color-text-secondary: #4a4a55;
-    --color-text-muted: #71717a;
+    --color-text-primary: #0a0a0f;
+    --color-text-secondary: #2a2a35;
+    --color-text-muted: #61616a;
 
     --color-border: rgba(212, 168, 83, 0.2);
     --color-border-hover: rgba(212, 168, 83, 0.5);

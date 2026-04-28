@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   keywords:
     "exhibition stand builder, interior design, trade show booth, custom exhibits, brand activation, event design, CraftedVibe Studio",
   authors: [{ name: "CraftedVibe Studio" }],
+  icons: {
+    icon: '/images/logoFeb.png',
+    apple: '/images/logoFeb.png',
+  },
   openGraph: {
     title: "CraftedVibe Studio | Exhibition Stand Builder & Interior Design",
     description:

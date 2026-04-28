@@ -91,6 +91,24 @@
   color: var(--color-text-secondary);
 }
 
+.contactCardText[href] {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contactCardText[href]:hover {
+  color: var(--color-gold);
+}
+
+.contactCard a[href*="wa.me"] {
+  color: #25D366;
+}
+
+.contactCard a[href*="wa.me"]:hover {
+  color: #20BA5A;
+}
+
 /* Form */
 .form {
   padding: var(--space-2xl);

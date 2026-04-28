@@ -8,9 +8,35 @@
   transition: all var(--transition-base);
 }
 
+/* Default state - before scroll (light text) */
+.navLink,
+.logoName,
+.logoTagline {
+  color: #f5f5f7;
+}
+
+.hamburger span {
+  background: #f5f5f7;
+}
+
+/* When scrolled - overlay appears (dark text) */
+.header.scrolled .navLink,
+.header.scrolled .logoName,
+.header.scrolled .logoTagline {
+  color: var(--color-text-secondary);
+}
+
+.header.scrolled .hamburger span {
+  background: var(--color-text-secondary);
+}
+
+.header.scrolled .navLink:hover {
+  color: var(--color-gold-dark);
+}
+
 .header.scrolled {
   padding: 12px 0;
-  background: rgba(10, 10, 15, 0.85);
+  background: var(--color-bg-glass);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--color-border);
@@ -78,9 +104,8 @@
 .navLink {
   padding: 8px 16px;
   font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  transition: color var(--transition-fast);
+  font-weight: 600;
+  transition: all var(--transition-fast);
   border-radius: var(--radius-full);
   position: relative;
 }
@@ -110,6 +135,27 @@
   margin-left: 16px;
   padding: 10px 24px;
   font-size: 0.85rem;
+}
+
+/* WhatsApp Link */
+.whatsappLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: 8px;
+  color: #25D366;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+}
+
+.whatsappLink:hover {
+  background: rgba(37, 211, 102, 0.1);
+  transform: scale(1.1);
+}
+
+.header.scrolled .whatsappLink {
+  color: #25D366;
 }
 
 /* Hamburger */

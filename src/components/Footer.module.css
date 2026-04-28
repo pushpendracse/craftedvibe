@@ -99,6 +99,17 @@
   transform: translateY(-3px);
 }
 
+/* WhatsApp specific styling */
+.socialLink[aria-label="WhatsApp"] {
+  color: #25D366;
+}
+
+.socialLink[aria-label="WhatsApp"]:hover {
+  color: #20BA5A;
+  border-color: #25D366;
+  background: rgba(37, 211, 102, 0.08);
+}
+
 /* Links */
 .linksTitle {
   font-family: var(--font-heading);

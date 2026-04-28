@@ -1,21 +1,44 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 
+const heroImages = [
+  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
+  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
+  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
+  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
+  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" },
+  { src: "/images/hero.png", alt: "CraftedVibe Studio - Premium Exhibition Stand" }
+
+];
+
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className={styles.hero} id="home">
       <div className={styles.heroBg}>
-        <Image
-          // src="https://drive.google.com/file/d/1C2IlIenvzhT7TX4Xk_f9lO8OZl4aLgDf/view?usp=drive_link"
-          src="/images/hero.png"
-          alt="CraftedVibe Studio - Premium Exhibition Stand"
-          fill
-          priority
-          unoptimized
-          className={styles.heroVideo}
-        />
+        {heroImages.map((image, index) => (
+          <Image
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority={index === 0}
+            unoptimized
+            className={`${styles.heroImage} ${index === currentImage ? styles.active : ""}`}
+          />
+        ))}
       </div>
 
       {/* Decorative elements */}

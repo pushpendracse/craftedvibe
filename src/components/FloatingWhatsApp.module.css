@@ -1,0 +1,104 @@
+.floatingWhatsApp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition-base);
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+.floatingWhatsApp:hover {
+  background: #20BA5A;
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+  transform: scale(1.1) translateY(-4px);
+}
+
+.floatingWhatsApp svg {
+  transition: transform var(--transition-fast);
+}
+
+.floatingWhatsApp:hover svg {
+  transform: scale(1.15);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all var(--transition-fast);
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid rgba(0, 0, 0, 0.85);
+}
+
+.floatingWhatsApp:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Pulse Animation */
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7), 0 0 0 12px rgba(37, 211, 102, 0.1);
+  }
+}
+
+.floatingWhatsApp:hover {
+  animation: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floatingWhatsApp {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .floatingWhatsApp svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .tooltip {
+    display: none;
+  }
+}
